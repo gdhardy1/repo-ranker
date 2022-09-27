@@ -10,7 +10,10 @@ import {
 
 import { GET_ORGANIZATON } from "../graphql/queries";
 
-export function useOrganizationData() {
+export function useOrganizationData(): LazyGetterTuple<
+  OrganizationData,
+  OrganizationDataVariables
+> {
   const [lazyOrganizationQuery, queryResult] = useLazyQuery<
     OrganizationData,
     OrganizationDataVariables

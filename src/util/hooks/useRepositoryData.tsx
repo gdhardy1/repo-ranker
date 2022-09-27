@@ -4,11 +4,15 @@ import {
   RepositoryData,
   RepositoryDataVariables,
   LazyGetter,
+  LazyGetterTuple,
 } from "../../types/types";
 
 import { GET_REPOSITORY } from "../graphql/queries";
 
-export function useRepositoryData() {
+export function useRepositoryData(): LazyGetterTuple<
+  RepositoryData,
+  RepositoryDataVariables
+> {
   const [lazyRepositoryQuery, queryResult] = useLazyQuery<
     RepositoryData,
     RepositoryDataVariables
