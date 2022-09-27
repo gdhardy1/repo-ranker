@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+import { LazyQueryResult } from "@apollo/client/react/types/types";
 export interface OrganizationData {
   organization: Organization;
 }
@@ -99,3 +101,17 @@ export class NullRepositoryData implements RepositoryData {
     };
   }
 }
+export interface OrganizationDataVariables {
+  login: string;
+}
+export interface RepositoryDataVariables {
+  login: string;
+  repoName: string;
+  branch: string;
+}
+
+export type LazyGetter<S, T> = (
+  variables: T
+) => Promise<LazyQueryResult<S, T> | undefined>;
+
+export type LazyGetterTuple<S, T> = [LazyGetter<S, T>, LazyQueryResult<S, T>];
