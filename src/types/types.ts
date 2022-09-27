@@ -34,6 +34,7 @@ export interface CommitHistory {
     edges: {
       node: CommitNode;
     }[];
+    pageInfo: PageInfo;
   };
 }
 
@@ -61,7 +62,12 @@ export class NullOrganizationData implements OrganizationData {
       repositories: {
         edges: [] as { node: RepositoryNode }[],
         totalCount: 0,
-        pageInfo: {} as PageInfo,
+        pageInfo: {
+          startCursor: "",
+          endCursor: "",
+          hasNextPage: false,
+          hasPreviousPage: false,
+        },
       },
     };
   }
@@ -82,6 +88,12 @@ export class NullRepositoryData implements RepositoryData {
               },
             },
           ],
+          pageInfo: {
+            startCursor: "",
+            endCursor: "",
+            hasNextPage: false,
+            hasPreviousPage: false,
+          },
         },
       },
     };
