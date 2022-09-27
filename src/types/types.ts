@@ -115,3 +115,12 @@ export type LazyGetter<S, T> = (
 ) => Promise<LazyQueryResult<S, T> | undefined>;
 
 export type LazyGetterTuple<S, T> = [LazyGetter<S, T>, LazyQueryResult<S, T>];
+
+export type AppContextType = {
+  organizationData: OrganizationData;
+  setOrganizationData: Dispatch<SetStateAction<OrganizationData>>;
+  repositoryData: RepositoryData;
+  setRepositoryData: Dispatch<SetStateAction<RepositoryData>>;
+  nextCursor: string | undefined;
+  setNextCursor: Dispatch<SetStateAction<string | undefined>>;
+};
