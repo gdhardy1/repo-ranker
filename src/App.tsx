@@ -7,6 +7,7 @@ import {
   NullOrganizationData,
   NullRepositoryData,
 } from "./types/types";
+import Search from "./components/Search";
 
 export const AppContext = createContext({} as AppContextType);
 
@@ -32,7 +33,9 @@ function App() {
 
   return (
     <div className="App">
-      <AppContext.Provider value={context}>APP GOES HERE</AppContext.Provider>
+      <AppContext.Provider value={context}>
+        <Search />
+      </AppContext.Provider>
     </div>
   );
 }

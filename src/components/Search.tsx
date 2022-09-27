@@ -4,10 +4,11 @@ import { useOrganizationData } from "../util/hooks/useOrganizationData";
 import { AppContext } from "../App";
 
 export default function SearchBox(props: any) {
-  const [searchText, setSearchText] = useState("");
-  const [getOrganizationData] = useOrganizationData();
-  const navigate = useNavigate();
   const { setNextCursor } = useContext(AppContext);
+  const [searchText, setSearchText] = useState("");
+  const navigate = useNavigate();
+
+  const [getOrganizationData] = useOrganizationData();
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -17,6 +18,7 @@ export default function SearchBox(props: any) {
     }
     setNextCursor(undefined);
     let result = await getOrganizationData({ login: searchText });
+    console.log(result);
 
     if (result?.data?.organization) {
       setSearchText("");
