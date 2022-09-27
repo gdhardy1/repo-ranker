@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./style/index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import OrganizationView from "./routes/OrganizationView";
 
 import {
   ApolloClient,
@@ -37,6 +38,12 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    children: [
+      {
+        path: "/:organizationLogin",
+        element: <OrganizationView />,
+      },
+    ],
   },
 ]);
 

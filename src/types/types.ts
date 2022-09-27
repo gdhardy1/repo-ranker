@@ -103,6 +103,7 @@ export class NullRepositoryData implements RepositoryData {
 }
 export interface OrganizationDataVariables {
   login: string;
+  cursor?: string | undefined;
 }
 export interface RepositoryDataVariables {
   login: string;

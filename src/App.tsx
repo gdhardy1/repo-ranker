@@ -8,6 +8,7 @@ import {
   NullRepositoryData,
 } from "./types/types";
 import Search from "./components/Search";
+import { Outlet } from "react-router-dom";
 
 export const AppContext = createContext({} as AppContextType);
 
@@ -35,6 +36,7 @@ function App() {
     <div className="App">
       <AppContext.Provider value={context}>
         <Search />
+        <Outlet />
       </AppContext.Provider>
     </div>
   );
