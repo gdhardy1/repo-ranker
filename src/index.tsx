@@ -13,7 +13,6 @@ import {
 } from "@apollo/client";
 
 import { setContext } from "@apollo/client/link/context";
-import { memoryUsage } from "process";
 
 const httpLink = createHttpLink({ uri: "https://api.github.com/graphql" });
 const authLink = setContext((_, { headers }) => {
