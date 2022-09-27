@@ -43,6 +43,10 @@ const router = createBrowserRouter([
         path: "/:organizationLogin",
         element: <OrganizationView />,
       },
+      {
+        path: "/:organizationLogin/:repoName/:branch",
+        element: <OrganizationView />,
+      },
     ],
   },
 ]);
