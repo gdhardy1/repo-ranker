@@ -8,7 +8,7 @@ import {
 
 import { GET_REPOSITORY } from "../graphql/queries";
 
-export function useRepository() {
+export function useRepositoryData() {
   const [lazyRepositoryQuery, queryResult] = useLazyQuery<
     RepositoryData,
     RepositoryDataVariables

@@ -1,5 +1,4 @@
-import { QueryResult, useLazyQuery } from "@apollo/client";
-import { LazyQueryResult } from "@apollo/client/react/types/types";
+import { useLazyQuery } from "@apollo/client";
 
 import {
   OrganizationData,
@@ -11,7 +10,7 @@ import {
 
 import { GET_ORGANIZATON } from "../graphql/queries";
 
-export function useOrganization() {
+export function useOrganizationData() {
   const [lazyOrganizationQuery, queryResult] = useLazyQuery<
     OrganizationData,
     OrganizationDataVariables
