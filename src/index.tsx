@@ -24,10 +24,28 @@ const authLink = setContext((_, { headers }) => {
     },
   };
 });
+const cache = new InMemoryCache({
+  typePolicies: {
+    Organization: {
+      fields: {
+        repositories: {
+          keyArgs: false,
+
+          merge: (existing = { edges: [] }, incoming) => {
+            const mergeResult = structuredClone(incoming);
+            mergeResult.edges = [...existing.edges, ...incoming.edges];
+
+            return mergeResult;
+          },
+        },
+      },
+    },
+  },
+});
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
+  cache,
 });
 
 const root = ReactDOM.createRoot(
