@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AppContext } from "../App";
+import { StarIcon } from "@heroicons/react/20/solid";
 
 export default function Repositories() {
   const { organizationData } = useContext(AppContext);
@@ -18,6 +19,7 @@ export default function Repositories() {
         const { node: repository } = edge;
         return (
           <li
+            className="repository-card"
             key={repository.id}
             onClick={(event) => {
               event.preventDefault();
@@ -37,6 +39,10 @@ export default function Repositories() {
                   <div className="ml-2 flex flex-shrink-0">
                     <p className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">
                       {repository.stargazers.totalCount}
+                      <StarIcon
+                        className="h-4 w-4 ml-2 my-auto flex-shrink-0"
+                        aria-hidden="true"
+                      />
                     </p>
                   </div>
                 </div>
