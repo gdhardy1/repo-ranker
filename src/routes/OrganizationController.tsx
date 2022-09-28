@@ -5,7 +5,7 @@ import { useRepositoryData } from "../util/hooks/useRepositoryData";
 import { useParams } from "react-router-dom";
 import ItemFactory from "../components/ItemFactory";
 
-export default function OrganizationView() {
+export default function OrganizationController() {
   const {
     organizationData,
     setOrganizationData,
