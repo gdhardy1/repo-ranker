@@ -6,7 +6,7 @@ This app allows you to browse commits on the default branch for a given public G
 
 # Running the App
 
-To run the app you will need to generate a [Github personal access token (PAT)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token). The exact permissions you token will need are:
+To run the app you will need to generate a [Github personal access token (PAT)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token). The exact permissions your token will need are:
 
 ```
 repo
@@ -41,7 +41,7 @@ Repositories.test.tsx
 OrganizationControler.test.tsx
 ```
 
-<font color="red"><b>PLEASE NOTE:</b></font> You must uncomment the line below in order for the tests to run run properly. This line is needed for tests to execute in with `act()` in React 18 but TypeScript does not allow it because it violates the "no explicit any" rule.
+<font color="red"><b>PLEASE NOTE:</b></font> You must uncomment the line below in order for the tests to run run properly. This line is needed for tests to execute with `act()` in React 18. However, TypeScript does not allow it because it violates the "no explicit any" rule.
 
 ```tsx
 // OrganizationController.test.tsx
@@ -51,7 +51,7 @@ globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 
 # What Was Built
 
-The following features where specifically built into this project
+The following features were specifically built into this project
 
 - Search functionality returns organization by Github login id
 - Repositories ranked by descending stargazer count
@@ -63,7 +63,7 @@ The following features where specifically built into this project
 
 ## General Design
 
-An `OrganizationController` handles the details of fetching data from the Github API. The `Repositories` and `Commits` views produced by the `ItemFactory` component handles display of the repository and commit information. A `Search` component handles user input.
+An `OrganizationController` handles the details of fetching data from the Github API. The `Repositories` and `Commits` views produced by the `ItemFactory` component handle display of the repository and commit information. A `Search` component handles user input.
 
 ## Tooling Used
 
@@ -82,11 +82,13 @@ Create React App provided a quick development set up without having to worry abo
 
 Given more time, I'd add features like:
 
-- Lazy loading more respositories/commits on scroll.
+- Lazy loading more respositories/commits on scroll
 - Notification auto dismissal
 
 Additionally, I'd address some of the following issues:
 
 - Reduce mixing of concerns, (e.g. there is some View logic that doesn't belong in the `OrganizationController`)
+- Address scalability of `ItemFactory` by refactoring to adhere to Open-closed Principle
 - Handle bad routes more gracefully rather than just rerouting back to home
 - Enhance testing suites (e.g. test paginated data fetches)
+- Address more error handling cases (e.g. handle GraphQL query partial failures and error logging)
