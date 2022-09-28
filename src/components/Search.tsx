@@ -4,7 +4,7 @@ import { useOrganizationData } from "../util/hooks/useOrganizationData";
 import { AppContext } from "../App";
 
 export default function SearchBox(props: any) {
-  const { setNextCursor } = useContext(AppContext);
+  const { setNextCursor, setNotification } = useContext(AppContext);
   const [searchText, setSearchText] = useState("");
   const navigate = useNavigate();
 
@@ -13,7 +13,11 @@ export default function SearchBox(props: any) {
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     if (searchText === "") {
-      alert("you must provide a org login");
+      setNotification({
+        title: "No Input",
+        message: "You must provide an organization login to search.",
+        show: true,
+      });
       return;
     }
     setNextCursor(undefined);
@@ -23,7 +27,11 @@ export default function SearchBox(props: any) {
       setSearchText("");
       navigate(`/${searchText}`);
     } else {
-      alert("Organization not found");
+      setNotification({
+        message: " No organization with the provided login id was found.",
+        title: "Not Found",
+        show: true,
+      });
     }
   };
   return (

@@ -125,4 +125,12 @@ export type AppContextType = {
   setRepositoryData: Dispatch<SetStateAction<RepositoryData>>;
   nextCursor: string | undefined;
   setNextCursor: Dispatch<SetStateAction<string | undefined>>;
+  notification: Notification;
+  setNotification: Dispatch<SetStateAction<Notification>>;
 };
+
+export interface Notification {
+  message: string;
+  title: string;
+  show: boolean;
+}

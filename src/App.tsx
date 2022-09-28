@@ -11,6 +11,7 @@ import Search from "./components/Search";
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import Breadcrumb from "./components/Breadcrumb";
+import Notification from "./components/Notification";
 
 export const AppContext = createContext({} as AppContextType);
 
@@ -22,6 +23,11 @@ function App() {
     new NullRepositoryData()
   );
   const [nextCursor, setNextCursor] = useState<string | undefined>(undefined);
+  const [notification, setNotification] = useState({
+    show: false,
+    message: "",
+    title: "",
+  });
 
   const context = {
     organizationData,
@@ -30,11 +36,14 @@ function App() {
     setRepositoryData,
     nextCursor,
     setNextCursor,
+    notification,
+    setNotification,
   };
 
   return (
     <div className="App">
       <AppContext.Provider value={context}>
+        <Notification />
         <Header />
         <Breadcrumb />
         <Search />
