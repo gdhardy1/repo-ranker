@@ -40,14 +40,14 @@ export default function OrganizationView() {
   const handleFetchMoreCommits = async () => {
     const endCursor =
       repositoryData.repository.object.history.pageInfo.endCursor;
-    console.log("fetching more commits");
+
     const result = await fetchMoreCommits({
       variables: {
         login: organizationData.organization.login,
         cursor: endCursor,
       },
     });
-    console.log(result.data.repository.object.history.pageInfo.startCursor);
+
     setNextCursor(result.data.repository.object.history.pageInfo.startCursor);
   };
 
@@ -74,7 +74,6 @@ export default function OrganizationView() {
         branch,
       })
         .then((result) => {
-          console.log(result);
           if (result?.data?.repository) {
             setRepositoryData(result.data);
           }

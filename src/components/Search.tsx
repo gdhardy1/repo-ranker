@@ -18,7 +18,6 @@ export default function SearchBox(props: any) {
     }
     setNextCursor(undefined);
     let result = await getOrganizationData({ login: searchText });
-    console.log(result);
 
     if (result?.data?.organization) {
       setSearchText("");
