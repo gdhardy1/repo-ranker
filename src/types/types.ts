@@ -33,6 +33,7 @@ export interface Repository {
 
 export interface CommitHistory {
   history: {
+    totalCount: number;
     edges: {
       node: CommitNode;
     }[];
@@ -81,6 +82,7 @@ export class NullRepositoryData implements RepositoryData {
     this.repository = {
       object: {
         history: {
+          totalCount: 0,
           edges: [
             {
               node: {

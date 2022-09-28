@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 
-import { AppContext } from "../App";
-import { useRepositoryData } from "../util/hooks/useRepositoryData";
+import { AppContext } from "../../App";
+import { useRepositoryData } from "../../util/hooks/useRepositoryData";
 
 export default function Commits(props: any) {
   const { repositoryData } = useContext(AppContext);

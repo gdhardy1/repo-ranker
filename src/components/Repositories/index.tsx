@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { AppContext } from "../App";
+import { AppContext } from "../../App";
 import { StarIcon } from "@heroicons/react/20/solid";
 
 export default function Repositories() {

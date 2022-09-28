@@ -1,0 +1,446 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Repositories /> Renders correctly 1`] = `
+Array [
+  <li
+    className="repository-card"
+    onClick={[Function]}
+  >
+    <div
+      className="block hover:bg-gray-50"
+    >
+      <div
+        className="px-4 py-4 sm:px-6"
+      >
+        <div
+          className="flex items-center justify-between"
+        >
+          <p
+            className="truncate text-sm font-medium text-indigo-600"
+          >
+            gatsby
+          </p>
+          <div
+            className="ml-2 flex flex-shrink-0"
+          >
+            <p
+              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+            >
+              53590
+              <svg
+                aria-hidden="true"
+                className="h-4 w-4 ml-2 my-auto flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clipRule="evenodd"
+                  d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>,
+  <li
+    className="repository-card"
+    onClick={[Function]}
+  >
+    <div
+      className="block hover:bg-gray-50"
+    >
+      <div
+        className="px-4 py-4 sm:px-6"
+      >
+        <div
+          className="flex items-center justify-between"
+        >
+          <p
+            className="truncate text-sm font-medium text-indigo-600"
+          >
+            gatsby-starter-blog
+          </p>
+          <div
+            className="ml-2 flex flex-shrink-0"
+          >
+            <p
+              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+            >
+              3343
+              <svg
+                aria-hidden="true"
+                className="h-4 w-4 ml-2 my-auto flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clipRule="evenodd"
+                  d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>,
+  <li
+    className="repository-card"
+    onClick={[Function]}
+  >
+    <div
+      className="block hover:bg-gray-50"
+    >
+      <div
+        className="px-4 py-4 sm:px-6"
+      >
+        <div
+          className="flex items-center justify-between"
+        >
+          <p
+            className="truncate text-sm font-medium text-indigo-600"
+          >
+            gatsby-starter-default
+          </p>
+          <div
+            className="ml-2 flex flex-shrink-0"
+          >
+            <p
+              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+            >
+              1356
+              <svg
+                aria-hidden="true"
+                className="h-4 w-4 ml-2 my-auto flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clipRule="evenodd"
+                  d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>,
+  <li
+    className="repository-card"
+    onClick={[Function]}
+  >
+    <div
+      className="block hover:bg-gray-50"
+    >
+      <div
+        className="px-4 py-4 sm:px-6"
+      >
+        <div
+          className="flex items-center justify-between"
+        >
+          <p
+            className="truncate text-sm font-medium text-indigo-600"
+          >
+            gatsby-starter-hello-world
+          </p>
+          <div
+            className="ml-2 flex flex-shrink-0"
+          >
+            <p
+              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+            >
+              630
+              <svg
+                aria-hidden="true"
+                className="h-4 w-4 ml-2 my-auto flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clipRule="evenodd"
+                  d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>,
+  <li
+    className="repository-card"
+    onClick={[Function]}
+  >
+    <div
+      className="block hover:bg-gray-50"
+    >
+      <div
+        className="px-4 py-4 sm:px-6"
+      >
+        <div
+          className="flex items-center justify-between"
+        >
+          <p
+            className="truncate text-sm font-medium text-indigo-600"
+          >
+            store.gatsbyjs.org
+          </p>
+          <div
+            className="ml-2 flex flex-shrink-0"
+          >
+            <p
+              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+            >
+              594
+              <svg
+                aria-hidden="true"
+                className="h-4 w-4 ml-2 my-auto flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clipRule="evenodd"
+                  d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>,
+  <li
+    className="repository-card"
+    onClick={[Function]}
+  >
+    <div
+      className="block hover:bg-gray-50"
+    >
+      <div
+        className="px-4 py-4 sm:px-6"
+      >
+        <div
+          className="flex items-center justify-between"
+        >
+          <p
+            className="truncate text-sm font-medium text-indigo-600"
+          >
+            gatsby-source-wordpress-experimental
+          </p>
+          <div
+            className="ml-2 flex flex-shrink-0"
+          >
+            <p
+              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+            >
+              389
+              <svg
+                aria-hidden="true"
+                className="h-4 w-4 ml-2 my-auto flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clipRule="evenodd"
+                  d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>,
+  <li
+    className="repository-card"
+    onClick={[Function]}
+  >
+    <div
+      className="block hover:bg-gray-50"
+    >
+      <div
+        className="px-4 py-4 sm:px-6"
+      >
+        <div
+          className="flex items-center justify-between"
+        >
+          <p
+            className="truncate text-sm font-medium text-indigo-600"
+          >
+            gatsby-docker
+          </p>
+          <div
+            className="ml-2 flex flex-shrink-0"
+          >
+            <p
+              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+            >
+              352
+              <svg
+                aria-hidden="true"
+                className="h-4 w-4 ml-2 my-auto flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clipRule="evenodd"
+                  d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>,
+  <li
+    className="repository-card"
+    onClick={[Function]}
+  >
+    <div
+      className="block hover:bg-gray-50"
+    >
+      <div
+        className="px-4 py-4 sm:px-6"
+      >
+        <div
+          className="flex items-center justify-between"
+        >
+          <p
+            className="truncate text-sm font-medium text-indigo-600"
+          >
+            gatsby-starter-shopify
+          </p>
+          <div
+            className="ml-2 flex flex-shrink-0"
+          >
+            <p
+              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+            >
+              262
+              <svg
+                aria-hidden="true"
+                className="h-4 w-4 ml-2 my-auto flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clipRule="evenodd"
+                  d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>,
+  <li
+    className="repository-card"
+    onClick={[Function]}
+  >
+    <div
+      className="block hover:bg-gray-50"
+    >
+      <div
+        className="px-4 py-4 sm:px-6"
+      >
+        <div
+          className="flex items-center justify-between"
+        >
+          <p
+            className="truncate text-sm font-medium text-indigo-600"
+          >
+            desktop
+          </p>
+          <div
+            className="ml-2 flex flex-shrink-0"
+          >
+            <p
+              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+            >
+              222
+              <svg
+                aria-hidden="true"
+                className="h-4 w-4 ml-2 my-auto flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clipRule="evenodd"
+                  d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>,
+  <li
+    className="repository-card"
+    onClick={[Function]}
+  >
+    <div
+      className="block hover:bg-gray-50"
+    >
+      <div
+        className="px-4 py-4 sm:px-6"
+      >
+        <div
+          className="flex items-center justify-between"
+        >
+          <p
+            className="truncate text-sm font-medium text-indigo-600"
+          >
+            gatsby-pt-BR
+          </p>
+          <div
+            className="ml-2 flex flex-shrink-0"
+          >
+            <p
+              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+            >
+              153
+              <svg
+                aria-hidden="true"
+                className="h-4 w-4 ml-2 my-auto flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clipRule="evenodd"
+                  d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>,
+]
+`;

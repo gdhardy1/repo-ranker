@@ -76,7 +76,7 @@ export default function OrganizationController() {
 
   useEffect(() => {
     if (organizationLogin && branch && repoName) {
-      const result = getRepositoryData({
+      getRepositoryData({
         login: organizationLogin,
         repoName,
         branch,
