@@ -17,11 +17,15 @@ export default function OrganizationView() {
 
   const { organizationLogin, repoName, branch } = useParams();
 
-  const [getOrganizationData, { fetchMore: fetchMoreRepositories }] =
-    useOrganizationData();
+  const [
+    getOrganizationData,
+    { loading: loadingOrganiationData, fetchMore: fetchMoreRepositories },
+  ] = useOrganizationData();
 
-  const [getRepositoryData, { fetchMore: fetchMoreCommits }] =
-    useRepositoryData();
+  const [
+    getRepositoryData,
+    { loading: loadingRepositoryData, fetchMore: fetchMoreCommits },
+  ] = useRepositoryData();
 
   const handleFetchMoreRepositories = async () => {
     const endCursor =
@@ -49,6 +53,10 @@ export default function OrganizationView() {
     });
 
     setNextCursor(result.data.repository.object.history.pageInfo.startCursor);
+  };
+
+  const isLoading = () => {
+    return loadingRepositoryData || loadingRepositoryData;
   };
 
   useEffect(() => {
@@ -104,17 +112,21 @@ export default function OrganizationView() {
             </button>
           )}
 
-          <div className="flex flex-col align-center">
-            <div className="outer-container flex justify-center">
-              <div className="list-container container p-4 max-w-2xl">
-                <div className="overflow-hidden bg-white shadow sm:rounded-md">
-                  <ul className="divide-y divide-gray-200">
-                    <ItemFactory />
-                  </ul>
+          {isLoading() ? (
+            <div className="loading mt-10">Loading...</div>
+          ) : (
+            <div className="flex flex-col align-center">
+              <div className="outer-container flex justify-center">
+                <div className="list-container container p-4 max-w-2xl">
+                  <div className="overflow-hidden bg-white shadow sm:rounded-md">
+                    <ul className="divide-y divide-gray-200">
+                      <ItemFactory />
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
         </>
       )}
     </AppContext.Consumer>
