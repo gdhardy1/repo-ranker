@@ -10,6 +10,7 @@ import {
 import Search from "./components/Search";
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
+import Breadcrumb from "./components/Breadcrumb";
 
 export const AppContext = createContext({} as AppContextType);
 
@@ -37,6 +38,7 @@ function App() {
     <div className="App">
       <AppContext.Provider value={context}>
         <Header />
+        <Breadcrumb />
         <Search />
         <Outlet />
       </AppContext.Provider>

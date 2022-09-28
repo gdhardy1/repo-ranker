@@ -28,7 +28,7 @@ export default function Repositories() {
               });
             }}
           >
-            <a href="#" className="block hover:bg-gray-50">
+            <div className="block hover:bg-gray-50">
               <div className="px-4 py-4 sm:px-6">
                 <div className="flex items-center justify-between">
                   <p className="truncate text-sm font-medium text-indigo-600">
@@ -41,7 +41,7 @@ export default function Repositories() {
                   </div>
                 </div>
               </div>
-            </a>
+            </div>
           </li>
         );
       })}
