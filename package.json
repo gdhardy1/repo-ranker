@@ -1,5 +1,6 @@
 {
   "name": "repo-ranker",
+  "author": "Gregory D. Hardy - https://gdhardy.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
