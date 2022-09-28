@@ -42,7 +42,7 @@ export interface CommitHistory {
 
 export interface CommitNode {
   id: string;
-  message: string;
+  messageHeadline: string;
   url: string;
 }
 
@@ -85,7 +85,7 @@ export class NullRepositoryData implements RepositoryData {
             {
               node: {
                 id: "",
-                message: "",
+                messageHeadline: "",
                 url: "",
               },
             },

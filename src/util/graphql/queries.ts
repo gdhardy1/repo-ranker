@@ -12,7 +12,7 @@ export const GET_ORGANIZATON = gql`
       name
       login
       repositories(
-        first: 5
+        first: 10
         after: $cursor
         orderBy: { field: STARGAZERS, direction: DESC }
       ) {
