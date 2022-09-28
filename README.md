@@ -87,14 +87,14 @@ Given more time, I'd add features like:
 
 Additionally, I'd address some of the following issues:
 
-UI/UX
+**UI/UX**
 - Handle bad routes more gracefully rather than just rerouting back to home
-- A sticky header navigation and hiding/minimizing the search box would be a better experience
+- A sticky header navigation and hiding/minimizing the search box on content load would be a better experience
 
-Code Quality
+**Code Quality**
 - Reduce mixing of concerns, (e.g. there is some View logic that doesn't belong in the `OrganizationController`)
 - Address scalability of `ItemFactory` by refactoring to adhere to Open-closed Principle
 
-Testing and Error Handling
+**Testing and Error Handling**
 - Enhance testing suites (e.g. test paginated data fetches)
 - Address more error edge cases (e.g. handle GraphQL query partial failures and error logging)
