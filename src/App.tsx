@@ -9,6 +9,7 @@ import {
 } from "./types/types";
 import Search from "./components/Search";
 import { Outlet } from "react-router-dom";
+import Header from "./components/Header";
 
 export const AppContext = createContext({} as AppContextType);
 
@@ -35,6 +36,7 @@ function App() {
   return (
     <div className="App">
       <AppContext.Provider value={context}>
+        <Header />
         <Search />
         <Outlet />
       </AppContext.Provider>
