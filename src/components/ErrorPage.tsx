@@ -7,7 +7,7 @@ export default function ErrorPage() {
   const navigate = useNavigate();
   useEffect(() => {
     navigate("/");
-  }, []);
+  }, [navigate]);
   return (
     <div>
       <Header />

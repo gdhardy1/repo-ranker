@@ -1,6 +1,5 @@
 import React from "react";
 
-import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import { act } from "react-dom/test-utils";
 import ReactDOM from "react-dom/client";
@@ -12,15 +11,11 @@ import {
 } from "../types/types";
 
 import OrganizationController from "./OrganizationController";
-import { BrowserRouter, MemoryRouter } from "react-router-dom";
 import TestContext from "../util/test/TestContext";
-
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ApolloMockedProviderWithLogging from "../util/test/ApolloMockedProviderWithLogging";
 
 import { GET_ORGANIZATON } from "../util/graphql/queries";
 
-globalThis.IS_REACT_ACT_ENVIRONMENT = true;
+// globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 
 const mockAppContext: AppContextType = {
   organizationData: new NullOrganizationData(),
