@@ -21,10 +21,8 @@ function App() {
   const [repositoryData, setRepositoryData] = useState<RepositoryData>(
     new NullRepositoryData()
   );
-  const [startCursor, setStartCursor] = useState("");
   const [nextCursor, setNextCursor] = useState<string | undefined>(undefined);
-  const [totalRepoCount, setTotalRepoCount] = useState(0);
-  const [login, setLogin] = useState<string>("");
+
   const context = {
     organizationData,
     setOrganizationData,
