@@ -33,7 +33,7 @@ export const FRAGMENT_REPOSITORY_CONNECTION = gql`
 
 export const FRAGMENT_COMMIT_HISTORY = gql`
   fragment commits on Commit {
-    history(first: 10) {
+    history(first: 5, after: $cursor) {
       totalCount
       edges {
         node {

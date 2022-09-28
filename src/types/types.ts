@@ -109,6 +109,7 @@ export interface RepositoryDataVariables {
   login: string;
   repoName: string;
   branch: string;
+  cursor?: string;
 }
 
 export type LazyGetter<S, T> = (

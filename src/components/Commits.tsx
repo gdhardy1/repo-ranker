@@ -1,34 +1,11 @@
 import React, { useContext, useEffect } from "react";
 
-import { useParams } from "react-router-dom";
 import { AppContext } from "../App";
 import { useRepositoryData } from "../util/hooks/useRepositoryData";
 
 export default function Commits(props: any) {
-  const { repositoryData, setRepositoryData } = useContext(AppContext);
+  const { repositoryData } = useContext(AppContext);
 
-  const params = useParams();
-  const { branch, repoName, organizationLogin } = params;
-  const [getRepositoryData] = useRepositoryData();
-
-  useEffect(() => {
-    if (organizationLogin && branch && repoName) {
-      const result = getRepositoryData({
-        login: organizationLogin,
-        repoName,
-        branch,
-      })
-        .then((result) => {
-          console.log(result);
-          if (result?.data?.repository) {
-            setRepositoryData(result.data);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  }, [branch, repoName]);
   return (
     <>
       {repositoryData.repository.object.history.edges.map((edge: any) => {

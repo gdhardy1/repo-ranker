@@ -40,6 +40,18 @@ const cache = new InMemoryCache({
         },
       },
     },
+    Commit: {
+      fields: {
+        history: {
+          keyArgs: false,
+          merge: (existing = { edges: [] }, incoming) => {
+            const mergeResult = structuredClone(incoming);
+            mergeResult.edges = [...existing.edges, ...incoming.edges];
+            return mergeResult;
+          },
+        },
+      },
+    },
   },
 });
 

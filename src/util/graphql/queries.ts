@@ -12,7 +12,7 @@ export const GET_ORGANIZATON = gql`
       name
       login
       repositories(
-        first: 10
+        first: 5
         after: $cursor
         orderBy: { field: STARGAZERS, direction: DESC }
       ) {
@@ -24,7 +24,12 @@ export const GET_ORGANIZATON = gql`
 `;
 
 export const GET_REPOSITORY = gql`
-  query Repository($login: String!, $repoName: String!, $branch: String!) {
+  query Repository(
+    $login: String!
+    $repoName: String!
+    $branch: String!
+    $cursor: String
+  ) {
     repository(name: $repoName, owner: $login) {
       object(expression: $branch) {
         ...commits
