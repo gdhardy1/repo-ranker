@@ -14,6 +14,7 @@ import {
 } from "@apollo/client";
 
 import { setContext } from "@apollo/client/link/context";
+import ErrorPage from "./components/ErrorPage";
 
 const httpLink = createHttpLink({ uri: "https://api.github.com/graphql" });
 const authLink = setContext((_, { headers }) => {
@@ -68,6 +69,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/:organizationLogin",
