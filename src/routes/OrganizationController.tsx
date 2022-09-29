@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "../App";
 import { useOrganizationData } from "../util/hooks/useOrganizationData";
 import { useRepositoryData } from "../util/hooks/useRepositoryData";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ItemFactory from "../components/ItemFactory";
 
 export default function OrganizationController() {
@@ -13,13 +13,15 @@ export default function OrganizationController() {
     setRepositoryData,
     nextCursor,
     setNextCursor,
+    setNotification,
   } = useContext(AppContext);
 
   const { organizationLogin, repoName, branch } = useParams();
+  const navigate = useNavigate();
 
   const [
     getOrganizationData,
-    { loading: loadingOrganiationData, fetchMore: fetchMoreRepositories },
+    { loading: loadingOrganizationData, fetchMore: fetchMoreRepositories },
   ] = useOrganizationData();
 
   const [
@@ -56,22 +58,26 @@ export default function OrganizationController() {
   };
 
   const isLoading = () => {
-    return loadingRepositoryData || loadingRepositoryData;
+    return loadingRepositoryData || loadingOrganizationData;
   };
 
   useEffect(() => {
     getOrganizationData({
       login: organizationLogin as string,
       cursor: nextCursor,
-    })
-      .then((result) => {
-        if (result?.data?.organization) {
-          setOrganizationData(result.data);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    }).then((result) => {
+      if (result?.data?.organization) {
+        setOrganizationData(result.data);
+      }
+      if (result?.error) {
+        navigate("/");
+        setNotification({
+          message: result.error.message,
+          show: true,
+          title: "Error",
+        });
+      }
+    });
   }, [organizationLogin, nextCursor]);
 
   useEffect(() => {
@@ -80,15 +86,20 @@ export default function OrganizationController() {
         login: organizationLogin,
         repoName,
         branch,
-      })
-        .then((result) => {
-          if (result?.data?.repository) {
-            setRepositoryData(result.data);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      }).then((result) => {
+        if (result?.data?.repository) {
+          setRepositoryData(result.data);
+        }
+
+        if (result?.error) {
+          navigate("/");
+          setNotification({
+            message: result.error.message,
+            show: true,
+            title: "Error",
+          });
+        }
+      });
     }
   }, [branch, repoName, nextCursor]);
 
