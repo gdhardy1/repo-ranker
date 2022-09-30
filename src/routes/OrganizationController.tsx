@@ -104,42 +104,38 @@ export default function OrganizationController() {
   }, [branch, repoName, nextCursor]);
 
   return (
-    <AppContext.Consumer>
-      {(context) => (
-        <>
-          {!repoName ? (
-            <button
-              className="flex w-40 mx-auto justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-              onClick={handleFetchMoreRepositories}
-            >
-              Fetch More
-            </button>
-          ) : (
-            <button
-              className="flex w-40 mx-auto justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-              onClick={handleFetchMoreCommits}
-            >
-              Fetch More
-            </button>
-          )}
+    <>
+      {!repoName ? (
+        <button
+          className="flex w-40 mx-auto justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          onClick={handleFetchMoreRepositories}
+        >
+          Fetch More
+        </button>
+      ) : (
+        <button
+          className="flex w-40 mx-auto justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          onClick={handleFetchMoreCommits}
+        >
+          Fetch More
+        </button>
+      )}
 
-          {isLoading() ? (
-            <div className="loading mt-10">Loading...</div>
-          ) : (
-            <div className="flex flex-col align-center">
-              <div className="outer-container flex justify-center">
-                <div className="list-container container p-4 max-w-2xl">
-                  <div className="overflow-hidden bg-white shadow sm:rounded-md">
-                    <ul className="divide-y divide-gray-200">
-                      <ItemFactory />
-                    </ul>
-                  </div>
-                </div>
+      {isLoading() ? (
+        <div className="loading mt-10">Loading...</div>
+      ) : (
+        <div className="flex flex-col align-center">
+          <div className="outer-container flex justify-center">
+            <div className="list-container container p-4 max-w-2xl">
+              <div className="overflow-hidden bg-white shadow sm:rounded-md">
+                <ul className="divide-y divide-gray-200">
+                  <ItemFactory />
+                </ul>
               </div>
             </div>
-          )}
-        </>
+          </div>
+        </div>
       )}
-    </AppContext.Consumer>
+    </>
   );
 }
