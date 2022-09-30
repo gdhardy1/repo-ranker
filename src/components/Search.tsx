@@ -1,4 +1,4 @@
-import React, { FormEvent, useState, useContext, useRef } from "react";
+import React, { FormEvent, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useOrganizationData } from "../util/hooks/useOrganizationData";
 import { AppContext } from "../App";
@@ -21,18 +21,8 @@ export default function SearchBox(props: any) {
       return;
     }
     setNextCursor(undefined);
-    let result = await getOrganizationData({ login: searchText });
-
-    if (result?.data?.organization) {
-      setSearchText("");
-      navigate(`/${searchText}`);
-    } else {
-      setNotification({
-        message: " No organization with the provided login id was found.",
-        title: "Not Found",
-        show: true,
-      });
-    }
+    setSearchText("");
+    navigate(`/${searchText}`);
   };
   return (
     <>
