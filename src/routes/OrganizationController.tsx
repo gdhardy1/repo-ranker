@@ -35,7 +35,6 @@ export default function OrganizationController() {
 
     const result = await fetchMoreRepositories({
       variables: {
-        login: organizationData.organization.login,
         cursor: endCursor,
       },
     });
@@ -49,7 +48,6 @@ export default function OrganizationController() {
 
     const result = await fetchMoreCommits({
       variables: {
-        login: organizationData.organization.login,
         cursor: endCursor,
       },
     });
