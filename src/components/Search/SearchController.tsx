@@ -1,12 +1,14 @@
-import React, { FormEvent, useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { FormEvent, useState, useContext, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { AppContext } from "../../App";
 import SearchForm from "./SearchForm";
 
 export default function SearchController(props: any) {
   const { setNextCursor, setNotification } = useContext(AppContext);
   const [searchText, setSearchText] = useState("");
+  const [showSearch, setShowSearch] = useState(false);
   const navigate = useNavigate();
+  const { organizationLogin, branch, repoName } = useParams();
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -22,8 +24,17 @@ export default function SearchController(props: any) {
     setSearchText("");
     navigate(`/${searchText}`);
   };
+
+  useEffect(() => {
+    if (organizationLogin || branch || repoName) {
+      setShowSearch(false);
+    } else {
+      setShowSearch(true);
+    }
+  }, [setShowSearch, showSearch, organizationLogin, branch, repoName]);
   return (
     <SearchForm
+      showSearch={showSearch}
       setSearchText={setSearchText}
       searchText={searchText}
       handleSubmit={handleSubmit}
