@@ -1,14 +1,9 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import Button from "./atoms/Button";
 import ItemFactory from "./ItemFactory";
 
 export default function LoadingZone(props: any) {
-  const {
-    isLoading,
-    fetchHandlers: { handleFetchMoreCommits, handleFetchMoreRepositories },
-  } = props;
-  const { repoName, branch } = useParams();
+  const { isLoading, handler } = props;
   return (
     <div>
       <>
@@ -24,11 +19,7 @@ export default function LoadingZone(props: any) {
           </div>
         </div>
         {isLoading && <div className="loading my-10">Loading...</div>}
-        {repoName && branch ? (
-          <Button handler={handleFetchMoreCommits}>Load More</Button>
-        ) : (
-          <Button handler={handleFetchMoreRepositories}>Load More</Button>
-        )}
+        {!isLoading && <Button handler={handler}>Load More</Button>}
       </>
     </div>
   );

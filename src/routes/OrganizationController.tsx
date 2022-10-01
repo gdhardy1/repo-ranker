@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { AppContext } from "../App";
 import { useOrganizationData } from "../util/hooks/useOrganizationData";
 import { useRepositoryData } from "../util/hooks/useRepositoryData";
@@ -29,31 +29,34 @@ export default function OrganizationController() {
     { loading: loadingRepositoryData, fetchMore: fetchMoreCommits },
   ] = useRepositoryData();
 
-  const handleFetchMoreRepositories = async () => {
-    const endCursor =
-      organizationData.organization.repositories.pageInfo.endCursor;
+  const handlers: Record<string, () => Promise<void>> = {
+    handleFetchMoreCommits: async () => {
+      const endCursor =
+        repositoryData.repository.object.history.pageInfo.endCursor;
 
-    const result = await fetchMoreRepositories({
-      variables: {
-        cursor: endCursor,
-      },
-    });
+      const result = await fetchMoreCommits({
+        variables: {
+          cursor: endCursor,
+        },
+      });
 
-    setNextCursor(result.data.organization.repositories.pageInfo.startCursor);
+      setNextCursor(result.data.repository.object.history.pageInfo.startCursor);
+    },
+
+    handleFetchMoreRepositories: async () => {
+      const endCursor =
+        organizationData.organization.repositories.pageInfo.endCursor;
+
+      const result = await fetchMoreRepositories({
+        variables: {
+          cursor: endCursor,
+        },
+      });
+
+      setNextCursor(result.data.organization.repositories.pageInfo.startCursor);
+    },
   };
-
-  const handleFetchMoreCommits = async () => {
-    const endCursor =
-      repositoryData.repository.object.history.pageInfo.endCursor;
-
-    const result = await fetchMoreCommits({
-      variables: {
-        cursor: endCursor,
-      },
-    });
-
-    setNextCursor(result.data.repository.object.history.pageInfo.startCursor);
-  };
+  const handler = useRef("handleFetchMoreRepositories");
 
   const isLoading = loadingRepositoryData || loadingOrganizationData;
 
@@ -91,6 +94,7 @@ export default function OrganizationController() {
       }).then((result) => {
         if (result?.data?.repository) {
           setRepositoryData(result.data);
+          handler.current = "handleFetchMoreCommits";
         }
 
         if (result?.error) {
@@ -111,12 +115,10 @@ export default function OrganizationController() {
     setRepositoryData,
     navigate,
     setNotification,
+    handler,
   ]);
 
   return (
-    <LoadingZone
-      isLoading={isLoading}
-      fetchHandlers={{ handleFetchMoreCommits, handleFetchMoreRepositories }}
-    />
+    <LoadingZone isLoading={isLoading} handler={handlers[handler.current]} />
   );
 }
