@@ -29,7 +29,7 @@ function App() {
     title: "",
   });
 
-  const context = {
+  const context: AppContextType = {
     organizationData,
     setOrganizationData,
     repositoryData,
