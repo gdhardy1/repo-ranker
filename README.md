@@ -41,14 +41,6 @@ Repositories.test.tsx
 OrganizationControler.test.tsx
 ```
 
-<font color="red"><b>PLEASE NOTE:</b></font> You must uncomment the line below in order for the tests to run run properly. This line is needed for tests to execute with `act()` in React 18. However, TypeScript does not allow it because it violates the "no explicit any" rule.
-
-```tsx
-// OrganizationController.test.tsx
-
-globalThis.IS_REACT_ACT_ENVIRONMENT = true;
-```
-
 # What Was Built
 
 The following features were specifically built into this project
@@ -88,13 +80,16 @@ Given more time, I'd add features like:
 Additionally, I'd address some of the following issues:
 
 **UI/UX**
+
 - Handle bad routes more gracefully rather than just rerouting back to home
 - A sticky header navigation and hiding/minimizing the search box on content load would be a better experience
 
 **Code Quality**
+
 - Reduce mixing of concerns, (e.g. there is some View logic that doesn't belong in the `OrganizationController`)
 - Address scalability of `ItemFactory` by refactoring to adhere to Open-closed Principle
 
 **Testing and Error Handling**
+
 - Enhance testing suites (e.g. test paginated data fetches)
 - Address more error edge cases (e.g. handle GraphQL query partial failures and error logging)

@@ -15,7 +15,11 @@ import TestContext from "../util/test/TestContext";
 
 import { GET_ORGANIZATON } from "../util/graphql/queries";
 
-// globalThis.IS_REACT_ACT_ENVIRONMENT = true;
+declare module globalThis {
+  var IS_REACT_ACT_ENVIRONMENT: boolean;
+}
+
+globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 
 const mockAppContext: AppContextType = {
   organizationData: new NullOrganizationData(),
@@ -108,7 +112,7 @@ describe("<Organization Controller />", () => {
     container = null;
   });
 
-  test("Sets organization to successfully queried organization.", async () => {
+  test("Sets organizationData to successfully queried organization.", async () => {
     spy = jest.spyOn(mockAppContext, "setOrganizationData");
 
     await act(async () => {});
