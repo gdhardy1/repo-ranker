@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { AppContext } from "../App";
 import { useOrganizationData } from "../util/hooks/useOrganizationData";
 import { useRepositoryData } from "../util/hooks/useRepositoryData";
 import { useNavigate, useParams } from "react-router-dom";
-import ItemFactory from "../components/ItemFactory";
+import LoadingZone from "../components/LoadingZone";
 
 export default function OrganizationController() {
   const {
@@ -55,9 +55,7 @@ export default function OrganizationController() {
     setNextCursor(result.data.repository.object.history.pageInfo.startCursor);
   };
 
-  const isLoading = () => {
-    return loadingRepositoryData || loadingOrganizationData;
-  };
+  const isLoading = loadingRepositoryData || loadingOrganizationData;
 
   useEffect(() => {
     getOrganizationData({
@@ -75,8 +73,14 @@ export default function OrganizationController() {
           title: "Error",
         });
       }
-    });
-  }, [organizationLogin, nextCursor]);
+    }); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    organizationLogin,
+    nextCursor,
+    setOrganizationData,
+    navigate,
+    setNotification,
+  ]);
 
   useEffect(() => {
     if (organizationLogin && branch && repoName) {
@@ -98,41 +102,21 @@ export default function OrganizationController() {
           });
         }
       });
-    }
-  }, [branch, repoName, nextCursor]);
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    organizationLogin,
+    branch,
+    repoName,
+    nextCursor,
+    setRepositoryData,
+    navigate,
+    setNotification,
+  ]);
 
   return (
-    <>
-      {isLoading() ? (
-        <div className="loading mt-10">Loading...</div>
-      ) : (
-        <div className="flex flex-col align-center">
-          <div className="outer-container flex justify-center">
-            <div className="list-container container p-4 max-w-2xl">
-              <div className="overflow-hidden bg-white shadow sm:rounded-md">
-                <ul className="divide-y divide-gray-200">
-                  <ItemFactory />
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-      {!repoName ? (
-        <button
-          className="flex w-40 mx-auto mb-16 justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-          onClick={handleFetchMoreRepositories}
-        >
-          Fetch More
-        </button>
-      ) : (
-        <button
-          className="flex w-40 mx-auto mb-16 justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-          onClick={handleFetchMoreCommits}
-        >
-          Fetch More
-        </button>
-      )}
-    </>
+    <LoadingZone
+      isLoading={isLoading}
+      fetchHandlers={{ handleFetchMoreCommits, handleFetchMoreRepositories }}
+    />
   );
 }
