@@ -1,8 +1,7 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { HomeIcon } from "@heroicons/react/20/solid";
 import { Link, useParams } from "react-router-dom";
 
-export default function Example() {
+export default function Breadcrumb() {
   const { organizationLogin, repoName, branch } = useParams();
 
   const pages = [];
@@ -10,7 +9,7 @@ export default function Example() {
     pages.push({
       name: organizationLogin,
       href: `/${organizationLogin}`,
-      current: false,
+      current: repoName && branch ? false : true,
     });
   if (branch)
     pages.push({
@@ -24,10 +23,7 @@ export default function Example() {
       className="flex border-b border-gray-200 bg-white"
       aria-label="Breadcrumb"
     >
-      <ol
-        role="list"
-        className="mx-auto flex w-full max-w-screen-xl space-x-4 px-4 sm:px-6 lg:px-8"
-      >
+      <ol className="mx-auto flex w-full max-w-screen-xl space-x-4 px-4 sm:px-6 lg:px-8">
         <li className="flex">
           <div className="flex items-center">
             <Link to="/" className="text-gray-400 hover:text-gray-500">
