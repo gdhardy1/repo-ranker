@@ -1,9 +1,8 @@
 import React from "react";
-import Button from "./atoms/Button";
+
 import ItemFactory from "./ItemFactory";
 
-export default function LoadingZone(props: any) {
-  const { isLoading, handler } = props;
+export default function LoadingZone() {
   return (
     <div>
       <div className="flex flex-col align-center">
@@ -17,8 +16,6 @@ export default function LoadingZone(props: any) {
           </div>
         </div>
       </div>
-      {isLoading && <div className="loading my-10">Loading...</div>}
-      {!isLoading && <Button handler={handler}>Load More</Button>}
     </div>
   );
 }
