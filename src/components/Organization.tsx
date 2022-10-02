@@ -24,7 +24,9 @@ export default function Organization(props: any) {
         />
       </div>
       <LoadingZoneWithLoading
-        isLoading={loadingStatus.newRepository}
+        isLoading={
+          repoName ? loadingStatus.newRepository : loadingStatus.newOrganization
+        }
         showIndicator={false}
       />
       <ButtonWithLoading isLoading={loadingStatus.data} handler={handler}>
