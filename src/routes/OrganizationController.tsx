@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "../App";
 import { useOrganizationData } from "../util/hooks/useOrganizationData";
 import { useRepositoryData } from "../util/hooks/useRepositoryData";
@@ -56,7 +56,7 @@ export default function OrganizationController() {
       setNextCursor(result.data.organization.repositories.pageInfo.startCursor);
     },
   };
-  const handler = useRef("handleFetchMoreRepositories");
+  const [handler, setHandler] = useState("handleFetchMoreRepositories");
 
   const isLoading = loadingRepositoryData || loadingOrganizationData;
 
@@ -67,6 +67,7 @@ export default function OrganizationController() {
     }).then((result) => {
       if (result?.data?.organization) {
         setOrganizationData(result.data);
+        setHandler("handleFetchMoreRepositories");
       }
       if (result?.error) {
         navigate("/");
@@ -94,7 +95,7 @@ export default function OrganizationController() {
       }).then((result) => {
         if (result?.data?.repository) {
           setRepositoryData(result.data);
-          handler.current = "handleFetchMoreCommits";
+          setHandler("handleFetchMoreCommits");
         }
 
         if (result?.error) {
