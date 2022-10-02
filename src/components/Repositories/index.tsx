@@ -1,34 +1,18 @@
 import React, { useContext } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AppContext } from "../../App";
 import { StarIcon } from "@heroicons/react/20/solid";
 
 export default function Repositories() {
   const { organizationData } = useContext(AppContext);
-  const navigate = useNavigate();
-  const params = useParams();
 
-  const handleViewCommits = async (variables: any) => {
-    navigate(
-      `/${params.organizationLogin}/${variables.repoName}/${variables.branch}`
-    );
-  };
   return (
     <>
       {organizationData.organization.repositories.edges.map((edge: any) => {
         const { node: repository } = edge;
         return (
-          <li
-            className="repository-card"
-            key={repository.id}
-            onClick={(event) => {
-              event.preventDefault();
-              handleViewCommits({
-                login: organizationData.organization.login,
-                repoName: repository.name,
-                branch: repository.defaultBranchRef.name,
-              });
-            }}
+          <Link
+            to={`/${organizationData.organization.login}/${repository.name}/${repository.defaultBranchRef.name}`}
           >
             <div className="block hover:bg-gray-50">
               <div className="px-4 py-4 sm:px-6">
@@ -48,7 +32,7 @@ export default function Repositories() {
                 </div>
               </div>
             </div>
-          </li>
+          </Link>
         );
       })}
     </>
