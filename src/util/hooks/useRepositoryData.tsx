@@ -16,7 +16,7 @@ export function useRepositoryData(): LazyGetterTuple<
   const [lazyRepositoryQuery, queryResult] = useLazyQuery<
     RepositoryData,
     RepositoryDataVariables
-  >(GET_REPOSITORY);
+  >(GET_REPOSITORY, { notifyOnNetworkStatusChange: true });
 
   const getRepository: LazyGetter<
     RepositoryData,

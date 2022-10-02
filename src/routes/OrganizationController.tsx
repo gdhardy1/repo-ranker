@@ -3,7 +3,9 @@ import { AppContext } from "../App";
 import { useOrganizationData } from "../util/hooks/useOrganizationData";
 import { useRepositoryData } from "../util/hooks/useRepositoryData";
 import { useNavigate, useParams } from "react-router-dom";
-import ItemFactory from "../components/ItemFactory";
+import Organization from "../components/Organization";
+import { OrganizationData, RepositoryData } from "../types/types";
+import withLoadingIndicator from "../components/hoc/withLoadingIndicator";
 
 export default function OrganizationController() {
   const {
@@ -29,37 +31,36 @@ export default function OrganizationController() {
     { loading: loadingRepositoryData, fetchMore: fetchMoreCommits },
   ] = useRepositoryData();
 
-  const handleFetchMoreRepositories = async () => {
-    const endCursor =
-      organizationData.organization.repositories.pageInfo.endCursor;
+  const handlers: Record<string, () => Promise<void>> = {
+    handleFetchMoreCommits: async () => {
+      const endCursor =
+        repositoryData.repository.object.history.pageInfo.endCursor;
 
-    const result = await fetchMoreRepositories({
-      variables: {
-        login: organizationData.organization.login,
-        cursor: endCursor,
-      },
-    });
+      const result = await fetchMoreCommits({
+        variables: {
+          cursor: endCursor,
+        },
+      });
 
-    setNextCursor(result.data.organization.repositories.pageInfo.startCursor);
+      setNextCursor(result.data.repository.object.history.pageInfo.startCursor);
+    },
+
+    handleFetchMoreRepositories: async () => {
+      const endCursor =
+        organizationData.organization.repositories.pageInfo.endCursor;
+
+      const result = await fetchMoreRepositories({
+        variables: {
+          cursor: endCursor,
+        },
+      });
+
+      setNextCursor(result.data.organization.repositories.pageInfo.startCursor);
+    },
   };
+  const [handler, setHandler] = useState("handleFetchMoreRepositories");
 
-  const handleFetchMoreCommits = async () => {
-    const endCursor =
-      repositoryData.repository.object.history.pageInfo.endCursor;
-
-    const result = await fetchMoreCommits({
-      variables: {
-        login: organizationData.organization.login,
-        cursor: endCursor,
-      },
-    });
-
-    setNextCursor(result.data.repository.object.history.pageInfo.startCursor);
-  };
-
-  const isLoading = () => {
-    return loadingRepositoryData || loadingOrganizationData;
-  };
+  const dataIsLoading = loadingRepositoryData || loadingOrganizationData;
 
   useEffect(() => {
     getOrganizationData({
@@ -68,6 +69,7 @@ export default function OrganizationController() {
     }).then((result) => {
       if (result?.data?.organization) {
         setOrganizationData(result.data);
+        setHandler("handleFetchMoreRepositories");
       }
       if (result?.error) {
         navigate("/");
@@ -77,8 +79,14 @@ export default function OrganizationController() {
           title: "Error",
         });
       }
-    });
-  }, [organizationLogin, nextCursor]);
+    }); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    organizationLogin,
+    nextCursor,
+    setOrganizationData,
+    navigate,
+    setNotification,
+  ]);
 
   useEffect(() => {
     if (organizationLogin && branch && repoName) {
@@ -89,6 +97,7 @@ export default function OrganizationController() {
       }).then((result) => {
         if (result?.data?.repository) {
           setRepositoryData(result.data);
+          setHandler("handleFetchMoreCommits");
         }
 
         if (result?.error) {
@@ -100,46 +109,55 @@ export default function OrganizationController() {
           });
         }
       });
-    }
-  }, [branch, repoName, nextCursor]);
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    organizationLogin,
+    branch,
+    repoName,
+    nextCursor,
+    setRepositoryData,
+    navigate,
+    setNotification,
+  ]);
+
+  const OrganizationWithLoading = withLoadingIndicator(Organization);
+  const loadingStatus = {
+    newOrganization: newOrganizationLoading(
+      dataIsLoading,
+      organizationLogin,
+      organizationData
+    ),
+    newRepository: newRepositoryLoading(
+      dataIsLoading,
+      repoName,
+      repositoryData
+    ),
+    data: dataIsLoading,
+  };
 
   return (
-    <AppContext.Consumer>
-      {(context) => (
-        <>
-          {!repoName ? (
-            <button
-              className="flex w-40 mx-auto justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-              onClick={handleFetchMoreRepositories}
-            >
-              Fetch More
-            </button>
-          ) : (
-            <button
-              className="flex w-40 mx-auto justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-              onClick={handleFetchMoreCommits}
-            >
-              Fetch More
-            </button>
-          )}
-
-          {isLoading() ? (
-            <div className="loading mt-10">Loading...</div>
-          ) : (
-            <div className="flex flex-col align-center">
-              <div className="outer-container flex justify-center">
-                <div className="list-container container p-4 max-w-2xl">
-                  <div className="overflow-hidden bg-white shadow sm:rounded-md">
-                    <ul className="divide-y divide-gray-200">
-                      <ItemFactory />
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-        </>
-      )}
-    </AppContext.Consumer>
+    <OrganizationWithLoading
+      loadingStatus={loadingStatus}
+      handler={handlers[handler]}
+      isLoading={loadingStatus.newOrganization}
+    />
   );
+}
+
+function newOrganizationLoading(
+  dataIsLoading: boolean,
+  organizationLogin: string | undefined,
+  organizationData: OrganizationData
+) {
+  return (
+    dataIsLoading && organizationLogin !== organizationData.organization.login
+  );
+}
+
+function newRepositoryLoading(
+  dataIsLoading: boolean,
+  repoName: string | undefined,
+  repositoryData: RepositoryData
+) {
+  return dataIsLoading && repoName !== repositoryData.repository.name;
 }

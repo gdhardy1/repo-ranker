@@ -7,11 +7,11 @@ import {
   NullOrganizationData,
   NullRepositoryData,
 } from "./types/types";
-import Search from "./components/Search";
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
-import Breadcrumb from "./components/Breadcrumb";
 import Notification from "./components/Notification";
+import SearchController from "./components/Search/SearchController";
+import Breadcrumb from "./components/Breadcrumb";
 
 export const AppContext = createContext({} as AppContextType);
 
@@ -29,7 +29,7 @@ function App() {
     title: "",
   });
 
-  const context = {
+  const context: AppContextType = {
     organizationData,
     setOrganizationData,
     repositoryData,
@@ -43,11 +43,11 @@ function App() {
   return (
     <div className="App">
       <AppContext.Provider value={context}>
-        <Notification />
         <Header />
         <Breadcrumb />
-        <Search />
+        <SearchController />
         <Outlet />
+        <Notification />
       </AppContext.Provider>
     </div>
   );

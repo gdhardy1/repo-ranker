@@ -142,12 +142,14 @@ export const organizationData: OrganizationData = {
 
 export const repositoryData: RepositoryData = {
   repository: {
+    name: "",
     object: {
       history: {
         totalCount: 20686,
         edges: [
           {
             node: {
+              oid: "1a2b3cd",
               id: "C_kwDOAiXwvtoAKDg1NjM4NmU1ZmFiZTcwMTNhMzZkNmU1Y2M1OTY1MzUzODM5OTMwNzA",
               messageHeadline: "chore(release): Publish next",
               url: "https://github.com/gatsbyjs/gatsby/commit/856386e5fabe7013a36d6e5cc596535383993070",
@@ -155,6 +157,7 @@ export const repositoryData: RepositoryData = {
           },
           {
             node: {
+              oid: "1a2b3cd",
               id: "C_kwDOAiXwvtoAKGFkMTE0OGU3ZDkzMDRiN2JlYzE5ODg0MWY2NDc0ODI0MjA3N2ExY2M",
               messageHeadline:
                 "fix(gatsby): Fix truncation of childNode during static HTML generatio…",
@@ -163,6 +166,7 @@ export const repositoryData: RepositoryData = {
           },
           {
             node: {
+              oid: "1a2b3cd",
               id: "C_kwDOAiXwvtoAKDQ1YTEwNWI2ZGI2ODkyMTUwZGEyN2Q3MWFiYWY2OTNiOGU0M2ZiMTQ",
               messageHeadline:
                 "fix(gatsby): Persist manifest on cached builds (#36693)",
@@ -171,6 +175,7 @@ export const repositoryData: RepositoryData = {
           },
           {
             node: {
+              oid: "1a2b3cd",
               id: "C_kwDOAiXwvtoAKDI3ODRmZWVmMTI5N2Q1ZjMzZWI2Yjk1ZjE4OTZhMTBhYTM3ODZkMDk",
               messageHeadline: "update react peer deps patch (#36707)",
               url: "https://github.com/gatsbyjs/gatsby/commit/2784feef1297d5f33eb6b95f1896a10aa3786d09",
@@ -178,6 +183,7 @@ export const repositoryData: RepositoryData = {
           },
           {
             node: {
+              oid: "1a2b3cd",
               id: "C_kwDOAiXwvtoAKGExNWNkZmQzODJmMGZhNTZlNmZmMmJmOWQ0MWE5NWJkOTgwNjJiNzU",
               messageHeadline:
                 "chore(deps): update starters and examples to ^18.0.21 (#36692)",
@@ -186,6 +192,7 @@ export const repositoryData: RepositoryData = {
           },
           {
             node: {
+              oid: "1a2b3cd",
               id: "C_kwDOAiXwvtoAKGYzMDA4OTVhNzY4OTU1ZjM0YTAxODE1MzMxODZmYzUyNzdiNjZiMDQ",
               messageHeadline: "chore(changelogs): update changelogs (#36698)",
               url: "https://github.com/gatsbyjs/gatsby/commit/f300895a768955f34a0181533186fc5277b66b04",
@@ -193,6 +200,7 @@ export const repositoryData: RepositoryData = {
           },
           {
             node: {
+              oid: "1a2b3cd",
               id: "C_kwDOAiXwvtoAKDUxMTdiZDE0ZWQyMjllZDE1YWQ2MmYwY2IyMTM2YmU3OWFkNTI3ZWE",
               messageHeadline:
                 "fix(deps): update starters and examples - gatsby (#36706)",
@@ -201,6 +209,7 @@ export const repositoryData: RepositoryData = {
           },
           {
             node: {
+              oid: "1a2b3cd",
               id: "C_kwDOAiXwvtoAKDU3ZTMzNjNlNmZkNzAwZTI5OGM2ZmQ5NDI2NWY4ZTUzODY0ZmFiNjk",
               messageHeadline:
                 "chore(docs): add showcase link to 4.24 release notes (#36705)",
@@ -209,6 +218,7 @@ export const repositoryData: RepositoryData = {
           },
           {
             node: {
+              oid: "1a2b3cd",
               id: "C_kwDOAiXwvtoAKDRjZjllZDZjZDE5OTY4M2Q2MmEwZDc4ZGVhMDY0MzZlZGRlYjI4YTg",
               messageHeadline: "chore(docs): Release Notes for 4.24 (#36666)",
               url: "https://github.com/gatsbyjs/gatsby/commit/4cf9ed6cd199683d62a0d78dea06436eddeb28a8",
@@ -216,6 +226,7 @@ export const repositoryData: RepositoryData = {
           },
           {
             node: {
+              oid: "1a2b3cd",
               id: "C_kwDOAiXwvtoAKGMyYTNkZmFmYTEyMGUwMTFhMDc0MmNjZjQwZDExNGU2ZDM2ODBkODU",
               messageHeadline:
                 "fix(gatsby): Don't throw when a path with special character is visite…",

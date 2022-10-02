@@ -3,7 +3,6 @@ import { useLazyQuery } from "@apollo/client";
 import {
   OrganizationData,
   OrganizationDataVariables,
-  Repository,
   LazyGetterTuple,
   LazyGetter,
 } from "../../types/types";
@@ -17,7 +16,7 @@ export function useOrganizationData(): LazyGetterTuple<
   const [lazyOrganizationQuery, queryResult] = useLazyQuery<
     OrganizationData,
     OrganizationDataVariables
-  >(GET_ORGANIZATON);
+  >(GET_ORGANIZATON, { notifyOnNetworkStatusChange: true });
 
   const getOrganization: LazyGetter<
     OrganizationData,
