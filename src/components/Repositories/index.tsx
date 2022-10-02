@@ -13,6 +13,7 @@ export default function Repositories() {
         return (
           <Link
             to={`/${organizationData.organization.login}/${repository.name}/${repository.defaultBranchRef.name}`}
+            key={repository.id}
           >
             <div className="block hover:bg-gray-50">
               <div className="px-4 py-4 sm:px-6">
