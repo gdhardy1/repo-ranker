@@ -69,7 +69,6 @@ export default function OrganizationController() {
     }).then((result) => {
       if (result?.data?.organization) {
         setOrganizationData(result.data);
-        setHandler("handleFetchMoreRepositories");
       }
       if (result?.error) {
         navigate("/");
@@ -109,7 +108,8 @@ export default function OrganizationController() {
           });
         }
       });
-    } // eslint-disable-next-line react-hooks/exhaustive-deps
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     organizationLogin,
     branch,
@@ -119,6 +119,14 @@ export default function OrganizationController() {
     navigate,
     setNotification,
   ]);
+
+  useEffect(() => {
+    if (repoName) {
+      setHandler("handleFetchMoreCommits");
+    } else {
+      setHandler("handleFetchMoreRepositories");
+    }
+  }, [repoName, organizationLogin]);
 
   const OrganizationWithLoading = withLoadingIndicator(Organization);
   const loadingStatus = {
