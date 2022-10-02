@@ -14,7 +14,7 @@ export default function Organization(props: any) {
   const LoadingZoneWithLoading = withLoadingIndicator(LoadingZone);
   return (
     <>
-      <div className="mt-8 mb-2 text-2xl">
+      <div className="mt-40 mb-2 text-2xl">
         <OrganizationTitle organizationData={organizationData} />
         <RepositoryTitleWithLoading
           isLoading={loadingStatus.newRepository}

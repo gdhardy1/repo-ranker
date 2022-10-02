@@ -4,7 +4,7 @@ export default function SearchForm(props: any) {
   let { searchText, showSearch } = props;
   const { handleSubmit, setSearchText } = props;
   return showSearch ? (
-    <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8 mt-20">
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <form className="space-y-6" onSubmit={handleSubmit}>
