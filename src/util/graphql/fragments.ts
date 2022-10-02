@@ -38,6 +38,7 @@ export const FRAGMENT_COMMIT_HISTORY = gql`
       edges {
         node {
           id
+          oid
           messageHeadline
           url
         }

@@ -21,9 +21,9 @@ export default function Commits(props: any) {
                   <p className="truncate text-sm font-medium text-indigo-600">
                     {commit.messageHeadline}
                   </p>
-                  <div className="ml-2 flex flex-shrink-0">
-                    <p className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">
-                      View on Github
+                  <div className="ml-2 flex shrink-0 basis-20">
+                    <p className="inline-flex w-16  rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800">
+                      {commit.oid.slice(0, 7)}
                     </p>
                   </div>
                 </div>

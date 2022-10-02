@@ -46,6 +46,7 @@ export interface CommitNode {
   id: string;
   messageHeadline: string;
   url: string;
+  oid: string;
 }
 
 export interface PageInfo {
@@ -91,6 +92,7 @@ export class NullRepositoryData implements RepositoryData {
                 id: "",
                 messageHeadline: "",
                 url: "",
+                oid: "",
               },
             },
           ],

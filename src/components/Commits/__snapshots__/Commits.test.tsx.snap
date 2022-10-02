@@ -6,6 +6,8 @@ Array [
     <a
       className="block hover:bg-gray-50"
       href="https://github.com/gatsbyjs/gatsby/commit/856386e5fabe7013a36d6e5cc596535383993070"
+      rel="noreferrer noopener"
+      target="_blank"
     >
       <div
         className="px-4 py-4 sm:px-6"
@@ -19,12 +21,12 @@ Array [
             chore(release): Publish next
           </p>
           <div
-            className="ml-2 flex flex-shrink-0"
+            className="ml-2 flex shrink-0 basis-20"
           >
             <p
-              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+              className="inline-flex w-16  rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
             >
-              View on Github
+              1a2b3cd
             </p>
           </div>
         </div>
@@ -35,6 +37,8 @@ Array [
     <a
       className="block hover:bg-gray-50"
       href="https://github.com/gatsbyjs/gatsby/commit/ad1148e7d9304b7bec198841f64748242077a1cc"
+      rel="noreferrer noopener"
+      target="_blank"
     >
       <div
         className="px-4 py-4 sm:px-6"
@@ -48,12 +52,12 @@ Array [
             fix(gatsby): Fix truncation of childNode during static HTML generatio…
           </p>
           <div
-            className="ml-2 flex flex-shrink-0"
+            className="ml-2 flex shrink-0 basis-20"
           >
             <p
-              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+              className="inline-flex w-16  rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
             >
-              View on Github
+              1a2b3cd
             </p>
           </div>
         </div>
@@ -64,6 +68,8 @@ Array [
     <a
       className="block hover:bg-gray-50"
       href="https://github.com/gatsbyjs/gatsby/commit/45a105b6db6892150da27d71abaf693b8e43fb14"
+      rel="noreferrer noopener"
+      target="_blank"
     >
       <div
         className="px-4 py-4 sm:px-6"
@@ -77,12 +83,12 @@ Array [
             fix(gatsby): Persist manifest on cached builds (#36693)
           </p>
           <div
-            className="ml-2 flex flex-shrink-0"
+            className="ml-2 flex shrink-0 basis-20"
           >
             <p
-              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+              className="inline-flex w-16  rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
             >
-              View on Github
+              1a2b3cd
             </p>
           </div>
         </div>
@@ -93,6 +99,8 @@ Array [
     <a
       className="block hover:bg-gray-50"
       href="https://github.com/gatsbyjs/gatsby/commit/2784feef1297d5f33eb6b95f1896a10aa3786d09"
+      rel="noreferrer noopener"
+      target="_blank"
     >
       <div
         className="px-4 py-4 sm:px-6"
@@ -106,12 +114,12 @@ Array [
             update react peer deps patch (#36707)
           </p>
           <div
-            className="ml-2 flex flex-shrink-0"
+            className="ml-2 flex shrink-0 basis-20"
           >
             <p
-              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+              className="inline-flex w-16  rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
             >
-              View on Github
+              1a2b3cd
             </p>
           </div>
         </div>
@@ -122,6 +130,8 @@ Array [
     <a
       className="block hover:bg-gray-50"
       href="https://github.com/gatsbyjs/gatsby/commit/a15cdfd382f0fa56e6ff2bf9d41a95bd98062b75"
+      rel="noreferrer noopener"
+      target="_blank"
     >
       <div
         className="px-4 py-4 sm:px-6"
@@ -135,12 +145,12 @@ Array [
             chore(deps): update starters and examples to ^18.0.21 (#36692)
           </p>
           <div
-            className="ml-2 flex flex-shrink-0"
+            className="ml-2 flex shrink-0 basis-20"
           >
             <p
-              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+              className="inline-flex w-16  rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
             >
-              View on Github
+              1a2b3cd
             </p>
           </div>
         </div>
@@ -151,6 +161,8 @@ Array [
     <a
       className="block hover:bg-gray-50"
       href="https://github.com/gatsbyjs/gatsby/commit/f300895a768955f34a0181533186fc5277b66b04"
+      rel="noreferrer noopener"
+      target="_blank"
     >
       <div
         className="px-4 py-4 sm:px-6"
@@ -164,12 +176,12 @@ Array [
             chore(changelogs): update changelogs (#36698)
           </p>
           <div
-            className="ml-2 flex flex-shrink-0"
+            className="ml-2 flex shrink-0 basis-20"
           >
             <p
-              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+              className="inline-flex w-16  rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
             >
-              View on Github
+              1a2b3cd
             </p>
           </div>
         </div>
@@ -180,6 +192,8 @@ Array [
     <a
       className="block hover:bg-gray-50"
       href="https://github.com/gatsbyjs/gatsby/commit/5117bd14ed229ed15ad62f0cb2136be79ad527ea"
+      rel="noreferrer noopener"
+      target="_blank"
     >
       <div
         className="px-4 py-4 sm:px-6"
@@ -193,12 +207,12 @@ Array [
             fix(deps): update starters and examples - gatsby (#36706)
           </p>
           <div
-            className="ml-2 flex flex-shrink-0"
+            className="ml-2 flex shrink-0 basis-20"
           >
             <p
-              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+              className="inline-flex w-16  rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
             >
-              View on Github
+              1a2b3cd
             </p>
           </div>
         </div>
@@ -209,6 +223,8 @@ Array [
     <a
       className="block hover:bg-gray-50"
       href="https://github.com/gatsbyjs/gatsby/commit/57e3363e6fd700e298c6fd94265f8e53864fab69"
+      rel="noreferrer noopener"
+      target="_blank"
     >
       <div
         className="px-4 py-4 sm:px-6"
@@ -222,12 +238,12 @@ Array [
             chore(docs): add showcase link to 4.24 release notes (#36705)
           </p>
           <div
-            className="ml-2 flex flex-shrink-0"
+            className="ml-2 flex shrink-0 basis-20"
           >
             <p
-              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+              className="inline-flex w-16  rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
             >
-              View on Github
+              1a2b3cd
             </p>
           </div>
         </div>
@@ -238,6 +254,8 @@ Array [
     <a
       className="block hover:bg-gray-50"
       href="https://github.com/gatsbyjs/gatsby/commit/4cf9ed6cd199683d62a0d78dea06436eddeb28a8"
+      rel="noreferrer noopener"
+      target="_blank"
     >
       <div
         className="px-4 py-4 sm:px-6"
@@ -251,12 +269,12 @@ Array [
             chore(docs): Release Notes for 4.24 (#36666)
           </p>
           <div
-            className="ml-2 flex flex-shrink-0"
+            className="ml-2 flex shrink-0 basis-20"
           >
             <p
-              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+              className="inline-flex w-16  rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
             >
-              View on Github
+              1a2b3cd
             </p>
           </div>
         </div>
@@ -267,6 +285,8 @@ Array [
     <a
       className="block hover:bg-gray-50"
       href="https://github.com/gatsbyjs/gatsby/commit/c2a3dfafa120e011a0742ccf40d114e6d3680d85"
+      rel="noreferrer noopener"
+      target="_blank"
     >
       <div
         className="px-4 py-4 sm:px-6"
@@ -280,12 +300,12 @@ Array [
             fix(gatsby): Don't throw when a path with special character is visite…
           </p>
           <div
-            className="ml-2 flex flex-shrink-0"
+            className="ml-2 flex shrink-0 basis-20"
           >
             <p
-              className="inline-flex rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
+              className="inline-flex w-16  rounded-full bg-green-100 px-2 text-xs font-semibold leading-5 text-green-800"
             >
-              View on Github
+              1a2b3cd
             </p>
           </div>
         </div>
