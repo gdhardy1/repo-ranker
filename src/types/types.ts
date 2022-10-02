@@ -28,6 +28,7 @@ export interface RepositoryData {
 }
 
 export interface Repository {
+  name: string;
   object: CommitHistory; // git objects filtered by Git rev-parse expression
 }
 
@@ -80,6 +81,7 @@ export class NullRepositoryData implements RepositoryData {
   repository;
   constructor() {
     this.repository = {
+      name: "",
       object: {
         history: {
           totalCount: 0,

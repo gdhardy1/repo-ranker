@@ -31,6 +31,7 @@ export const GET_REPOSITORY = gql`
     $cursor: String
   ) {
     repository(name: $repoName, owner: $login) {
+      name
       object(expression: $branch) {
         ...commits
       }

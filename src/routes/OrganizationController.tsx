@@ -3,7 +3,7 @@ import { AppContext } from "../App";
 import { useOrganizationData } from "../util/hooks/useOrganizationData";
 import { useRepositoryData } from "../util/hooks/useRepositoryData";
 import { useNavigate, useParams } from "react-router-dom";
-import LoadingZone from "../components/LoadingZone";
+import Organization from "../components/Organization";
 
 export default function OrganizationController() {
   const {
@@ -116,10 +116,11 @@ export default function OrganizationController() {
     setRepositoryData,
     navigate,
     setNotification,
-    handler,
   ]);
 
   return (
-    <LoadingZone isLoading={isLoading} handler={handlers[handler.current]} />
+    <>
+      <Organization isLoading={isLoading} handler={handlers[handler]} />
+    </>
   );
 }

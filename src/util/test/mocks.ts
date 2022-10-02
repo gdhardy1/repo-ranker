@@ -142,6 +142,7 @@ export const organizationData: OrganizationData = {
 
 export const repositoryData: RepositoryData = {
   repository: {
+    name: "",
     object: {
       history: {
         totalCount: 20686,
